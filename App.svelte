@@ -1,9 +1,10 @@
 <script>
+  import "bulma/css/bulma.css";
   import Wajh from "./Wajh.svelte";
 
   export let dataset;
 
-  let selectedWajh = "003";
+  let selectedWajh = "001";
 
   let wajhList = Object.keys(dataset);
   $: wajhData = dataset[selectedWajh];

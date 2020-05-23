@@ -2,6 +2,8 @@
 // afect the deployment and dowload
 
 import svelte from "rollup-plugin-svelte";
+import json from "rollup-plugin-json";
+import postcss from "rollup-plugin-postcss";
 import resolve from "rollup-plugin-node-resolve";
 import commonjs from "rollup-plugin-commonjs";
 import { terser } from "rollup-plugin-terser";
@@ -26,6 +28,13 @@ export default {
         css.write("public/bundle.css");
       }
     }),
+
+		json({
+			compact: true,
+			namedExports: false
+		}),
+
+		postcss(),
 
     // If you have external dependencies installed from
     // npm, you'll most likely need these plugins. In
